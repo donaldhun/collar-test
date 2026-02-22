@@ -18,7 +18,7 @@ public static class CollarParser
     public static List<CollarData> LoadAndParseCSV()
     {
         // The x/y values are in the millions which can't be displayed well in unity, so scale the positions to fit in the scene
-        const float positionScaler = 0.01f;
+        const float POSITION_SCALER = 0.01f;
 
         List<CollarData> collarList = new List<CollarData>();
 
@@ -44,9 +44,9 @@ public static class CollarParser
             currentCollar.BHID = collarRows[0];
 
             
-            float x = float.Parse(collarRows[1]) * positionScaler;
-            float z = float.Parse(collarRows[2]) * positionScaler;
-            float y = float.Parse(collarRows[3]) * positionScaler;
+            float x = float.Parse(collarRows[1]) * POSITION_SCALER;
+            float z = float.Parse(collarRows[2]) * POSITION_SCALER;
+            float y = float.Parse(collarRows[3]) * POSITION_SCALER;
 
             currentCollar.collarPosition.x = x;
             currentCollar.collarPosition.y = y;
